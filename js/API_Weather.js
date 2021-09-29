@@ -27,6 +27,14 @@ class API_WEATHER {
         crossdomain: true
       })
   }
+
+  GetThreeDaysForecast() {
+    return axios
+      .get(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${this.city}&cnt=4&units=metric&appid=${API_KEY}`, {
+        crossdomain: true
+      })
+  }
+
   // Retourne l'element HTML de l'icon symbolisant la méteo.
   getHTMLElementFromIcon(icon) {
     return `<img src=${API_URL_ICON}${icon}@2x.png class="weather-icon"/>`
